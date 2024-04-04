@@ -1,0 +1,423 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+}
+
+.sidebar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 240px;
+    height: 100vh;
+    padding: 0 1.7rem;
+    color: white;
+    overflow: hidden;
+    background: linear-gradient(to right, #24c6dc, #514a9d);
+}
+
+.menu {
+    height: 88%;
+    position: relative;
+    list-style: none;
+    padding: 0;
+    margin-top: 5vh;
+}
+
+    .menu li {
+        padding: 1rem;
+        margin: 8px 0;
+        border-radius: 8px;
+        border: 1px solid transparent;
+    }
+
+        .menu li:hover {
+            border: 1px solid white;
+        }
+
+    .menu a {
+        text-decoration: none;
+    }
+
+        .menu a span {
+            color: white;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+.logout {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* ------------------main content----------------------------- */
+
+.main {
+    position: relative;
+    background-color: #ebe9e9;
+    width: 100%;
+    padding: 1rem;
+}
+
+.headerWrapper img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.headerWrapper {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    padding: 10px 2rem;
+    margin-bottom: 1rem;
+}
+
+.userInfo {
+    display: flex;
+    align-items: center;
+    gap: 1;
+}
+
+.headerTitle {
+    color: #514a9d;
+}
+
+.cardContainer {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top:3vh;
+}
+
+.cardWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.mainTitle {
+    color: #514a9d;
+    padding-bottom: 10px;
+    font-size: 15px;
+}
+
+.requestCard {
+    background-color: #f4f2ff;
+    border-radius: 10px;
+    padding: 1.2rem;
+    width: 290px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ----------------------------------------request page css-------------------------------------------- */
+
+
+.userContainer {
+    margin-top: 5vh;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+
+    .userContainer .title,
+    .table-container .title {
+        font-weight: 500;
+        position: relative;
+        padding-bottom: 2vh;
+        color: #1b1936;
+    }
+
+        .userContainer .title::before,
+        .table-container .title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 3px;
+            width: 100%;
+            background: linear-gradient(to right, #24c6dc, #514a9d);
+        }
+
+    .userContainer form .userDetails {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 20px 0 12px 0;
+    }
+
+    .userContainer form .inputBox {
+        margin-bottom: 15px;
+        width: calc(100% / 3 - 20px);
+    }
+
+        .userContainer form .inputBox input:hover {
+            border-color: #a6a6a6;
+        }
+
+.userDetails .inputBox label,
+.userDetails .optionBox label,
+.userDetails .remarksBox label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+    color: #1b1936;
+}
+
+.userDetails .inputBox input {
+    height: 2em;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 0.5vw;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+    .userDetails .inputBox input:focus,
+    .userDetails .inputBox input:valid {
+        border-color: #727272;
+        color: #727272;
+    }
+
+.userDetails .optionBox {
+    margin-bottom: 15px;
+    width: calc(100% / 3 - 20px);
+    transition: all 0.3s ease;
+}
+
+.userDetails select {
+    height: 2em;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+}
+
+
+
+.userDetails .optionBox select:hover {
+    border-color: #3a6073;
+}
+
+.userDetails .remarksBox {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.userDetails textarea {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    padding-top: 10px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+    resize: none;
+}
+
+    .userDetails textarea:hover {
+        border-color: #3a6073;
+    }
+
+
+.button {
+    height: 2em;
+    width: calc(100% / 3 - 20px);
+    margin: 5vh 0;
+}
+
+    .button button {
+        height: 100%;
+        width: 100%;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        font-weight: 100;
+        color: #fff;
+        font-size: large;
+        letter-spacing: 1px;
+        background: linear-gradient(to right, #24c6dc, #514a9d);
+    }
+
+        .button button:hover {
+            background: linear-gradient(to right, #1caabc, #453f86);
+            cursor: pointer;
+        }
+
+
+/* -----------------------------profile page code------------------------------------------- */
+
+.profileContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.c1 {
+    width: 26%;
+    margin-bottom: 1vh;
+}
+
+.c2 {
+    width: 50%;
+    margin-bottom: 1vh;
+}
+
+.nonelabel{
+    visibility:hidden;
+}
+
+
+
+
+
+.tableHeader {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #fff; /* Optional: Background color for header */
+}
+
+.tableBody {
+    height: 300px;
+    overflow-y: auto;
+    position: relative;
+    overflow-y: auto;
+    height: calc(100% - 30px); /* Adjust the height to accommodate header height */
+}
+
+.table-container table {
+    margin-top: 5vh;
+    width: 100%;
+}
+
+.table-container {
+    height: 300px; /* Adjust the height as needed */
+    position: relative;
+}
+
+.table-header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: white; /* Optional: Background color for header */
+}
+
+    .table-header thead tr th {
+        background-color: white;
+        width: calc(100%/4);
+    }
+
+.table-body tbody tr td {
+    width: calc(100%/4);
+}
+
+.table-body {
+    overflow-y: auto;
+    height: calc(70% - 30px); /* Adjust the height to accommodate header height */
+}
+
+/* Optional: Style for table headers */
+.table-header th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Optional: Style for alternating row colors */
+.table-body tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table-container table th {
+    border-bottom: 1px solid black;
+    text-align: center;
+    padding-bottom: 1vh;
+}
+
+.table-container table td {
+    text-align: center;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    border-left:1px solid black;
+    border-bottom:1px solid black;
+}
+
+.table-container .button {
+    height: 2em;
+    width: calc(100% / 3 - 20px);
+    margin: 5vh 0;
+}
+
+    .table-container .button button {
+        height: 100%;
+        width: 100%;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        font-weight: 100;
+        color: #fff;
+        font-size: large;
+        letter-spacing: 1px;
+        background: linear-gradient(to right, #24c6dc, #514a9d);
+    }
+
+        .table-container .button button:hover {
+            background: linear-gradient(to right, #1caabc, #453f86);
+            cursor: pointer;
+        }
+
+
+.btn-primary {
+    background: linear-gradient(to right, #1caabc, #453f86);
+    /* Add any other necessary styles */
+}
+
+.infoContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    .infoContainer div {
+        width: 50%;
+    }
+
+select {
+    height: 2em;
+    width: 33%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+}

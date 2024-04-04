@@ -1,0 +1,98 @@
+﻿@page
+
+@using Microsoft.AspNetCore.Identity
+@using IT_Service_Deck.Models
+
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+@model IT_Service_Deck.Pages.RequestModel
+@{
+}
+
+<div class="main">
+    <div class="headerWrapper">
+        <div class="headerTitle">
+            <h4>Request</h4>
+        </div>
+        <div class="userInfo">
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })">
+                    <button id="logout" type="submit" style="color:#514a9d;" class="nav-link btn btn-link text-dark border-0">Logout</button>
+                </form>
+
+            }
+            else
+            {
+                <a class="nav-link text-dark" id="register" style="color:#514a9d;" asp-area="Identity" asp-page="/Account/Register">Register</a>
+
+
+                <a class="nav-link text-dark" id="login" style="color:#514a9d;" asp-area="Identity" asp-page="/Account/Login">Login</a>
+
+            }
+        </div>
+    </div>
+
+    <div class="cardContainer">
+        <div class="userContainer">
+            <div>
+                @if (string.IsNullOrEmpty(Model.Message))
+                {
+                }
+                else
+                {
+                    <span>@Model.Message</span>
+                }
+            </div>
+            <div class="title">USB access request</div>
+            <form method="post">
+                <div class="userDetails">
+                    <div class="inputBox">
+                        <label for="uName">Name</label>
+                        <input type="text" name="Name" id="uName" value="@Model.appUser?.Name" disabled>
+                        <input type="hidden" name="EmployeeId" value="@Model.appUser?.EmployeeId" />
+
+                    </div>
+                    <div class="inputBox">
+                        <label for="uId">Employee Id</label>
+                        <input type="text" name="EmployeeId" id="uId" value="@Model.appUser?.EmployeeId" disabled>
+                    </div>
+                    <div class="inputBox">
+                        <label for="uDepartment">Department</label>
+                        <input type="text" name="Department" id="uDepartment" value="@Model.appUser?.Department" disabled>
+                    </div>
+                    <div class="inputBox">
+                        <label for="uEmail">Email</label>
+                        <input type="text" name="Email" id="uEmail" value="@Model.appUser?.Email" disabled>
+                    </div>
+
+                    <div class="optionBox">
+                        <label for="accessType">Access Type</label>
+                        <select name="RequestType" id="accessType" required>
+                            <option value="">---select---</option>
+                            <option value="permanent">permanent</option>
+                            <option value="temporary">temporary</option>
+                        </select>
+                    </div>
+                    <div class="optionBox nonelabel">
+                        <label for="accessDuration">Access Duration</label>
+                        <select name="RequestDuration" id="accessDuration">
+                            <option value="">---select---</option>
+                            <option value="1hr">1 hour</option>
+                            <option value="1day">1 day</option>
+                            <option value="2days">2 days</option>
+                            <option value="3days">3 days</option>
+                        </select>
+                    </div>
+                    <div class="button">
+                        <button type="submit">Submit</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        
+
+       
+    </div>
+

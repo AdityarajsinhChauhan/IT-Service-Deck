@@ -1,0 +1,78 @@
+﻿@page
+@model RegisterModel
+@{
+    Layout = "/Pages/Shared/_LoginLayout.cshtml";
+}
+
+
+<!--THis EmployeeId is not Primary Key fot this table Id is primary key whihc is used to access THis table in whole pragram not the Employee Id-->
+
+
+
+<div class="background">
+    <div class="bg">
+        <div class="register-container">
+            <div class="title">
+                <h2>Register</h2>
+            </div>
+            <div style="color: darkred; background-color: #ffbab0;">
+                @if (!string.IsNullOrEmpty(Model.PasswordMismatchErrorMessage))
+                {
+                    <p>@Model.PasswordMismatchErrorMessage</p>
+                }
+                @if (!string.IsNullOrEmpty(Model.PasswordComplexityErrorMessage))
+                {
+                    <p>@Model.PasswordComplexityErrorMessage</p>
+                }
+            </div>
+
+            <form method="post" class="content" id="registerForm" asp-route-returnUrl="@Model.ReturnUrl">
+                
+
+                <div class="input-box">
+                    <label class="col-sm-4 col-form-label">Full Name</label>
+                    <input class="form-control" asp-for="Input.Name" required/>
+                </div>
+                <div class="input-box">
+                    <label class="col-sm-4 col-form-label">Department</label>
+                    <input class="form-control" asp-for="Input.Department" required/>
+                </div>
+                <div class="input-box">
+                    <label class="col-sm-4 col-form-label">EmployeeId</label>
+                    <input class="form-control" asp-for="Input.EmployeeId" required/>
+                </div>
+                <div class="input-box">
+                    <label class="col-sm-4 col-form-label">Phone Number</label>
+                    <input class="form-control" asp-for="Input.PhoneNumber" required/>
+                </div>
+                <div class="input-box">
+                    <label class="col-sm-4 col-form-label">Email</label>
+                    <input type="email" class="form-control" asp-for="Input.Email" required/>
+                </div>
+                <div class="input-box">
+                    <label class="col-sm-4 col-form-label">Password</label>
+                    <input id="password" class="form-control" asp-for="Input.Password" required />
+
+                </div>
+                <div class="input-box">
+                    <label class="col-sm-4 col-form-label">Confirm Password</label>
+                    <input id="re-pwd" class="form-control" asp-for="Input.ConfirmPassword" required />
+                </div>
+
+                
+
+                <div class="button">
+                    <button type="submit" class="login-button">Submit</button>
+                </div>
+            </form>
+            <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">back to login</a>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+

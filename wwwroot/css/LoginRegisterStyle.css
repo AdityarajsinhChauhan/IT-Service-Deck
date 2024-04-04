@@ -1,0 +1,228 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(to right, #24c6dc, #514a9d);
+}
+
+.background {
+    background-image: url('146876.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to right, #24c6dc, #514a9d);
+    opacity: 0.8; /* Adjust the opacity of the background overlay */
+}
+
+
+.login-container {
+    position: relative;
+    width: 30vw;
+    margin-top: 5vh;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    opacity: 1;
+}
+
+.register-container {
+    position: relative;
+    width: 50vw;
+    margin-top: 5vh;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    opacity: 1;
+}
+
+    .register-container .title,
+    .login-container .title {
+        font-weight: 500;
+        position: relative;
+        padding-bottom: 2vh;
+        color: #1b1936;
+    }
+
+h2 {
+    color: #1b1936;
+    ;
+}
+
+.register-container .title::before,
+.login-container .title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(to right, #24c6dc, #514a9d);
+}
+
+.register-container .content,
+.login-container .content {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0 12px 0;
+}
+
+
+.login-container .input-box {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.register-container .input-box {
+    margin-bottom: 15px;
+    width: 46%;
+    margin-left: 2%;
+}
+
+.input-box input {
+    width: 100%;
+}
+
+.inputBox input:hover {
+    border-color: #a6a6a6;
+}
+
+.login-container .input-box label {
+    margin-top: 5vh;
+}
+
+.input-box label {
+    font-weight: 500;
+    display: block;
+    color: #1b1936;
+}
+
+.input-box input {
+    height: 2em;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 0.5vw;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+    .input-box input:focus {
+        border-color: #727272;
+        color: #727272;
+    }
+
+.button {
+    height: 2em;
+    width: 100%;
+    margin-top: 7vh;
+    margin-bottom: 2vh
+}
+
+
+    .button .login-button {
+        height: 100%;
+        width: 100%;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        font-weight: 100;
+        color: #fff;
+        font-size: large;
+        letter-spacing: 1px;
+        background: linear-gradient(to right, #24c6dc, #514a9d);
+        border: 1px solid transparent;
+    }
+
+        .button .login-button:hover {
+            background: linear-gradient(to right, #1caabc, #453f86);
+            cursor: pointer;
+        }
+
+    .button .register-button {
+        margin-left: 2%;
+        height: 100%;
+        width: 90%;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        font-weight: 100;
+        color: #fff;
+        font-size: large;
+        letter-spacing: 1px;
+        background-color: white;
+        color: #453f86;
+        border: 1px solid #453f86;
+    }
+
+        .button .register-button:hover {
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            font-weight: 100;
+            color: #fff;
+            font-size: large;
+            letter-spacing: 1px;
+            background: linear-gradient(to right, #24c6dc, #514a9d);
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+
+a {
+    display: flex;
+    justify-content: center;
+    color: #1b1936;
+}
+.text-danger:empty {
+    display: none;
+}
+
+.text-danger {
+    background-color: #FFBABA;
+    color: #D8000C;
+    border-radius: 5px;
+    padding: 0.5vh;
+    border: 1px solid #D8000C;
+    font-size: smaller;
+}
+
+.login-error {
+    background-color: #FFBABA;
+    color: #D8000C;
+    border-radius: 5px;
+    padding: 0.5vh;
+    font-size: smaller;
+    display: flex;
+    justify-content: center;
+}
+
+.text-danger:empty {
+    display: none;
+}
+
+.error-container {
+    height: 4vh; /* Set a minimum height for the error container */
+}

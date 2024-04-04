@@ -1,0 +1,71 @@
+﻿@page
+
+@using Microsoft.AspNetCore.Identity
+@using IT_Service_Deck.Models
+
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+@model IT_Service_Deck.Pages.ProfileModel
+@{
+}
+<div class="main">
+    <div class="headerWrapper">
+        <div class="headerTitle">
+            <h4>Profile</h4>
+        </div>
+        <div class="userInfo">
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })">
+                    <button id="logout" type="submit" style="color:#514a9d;" class="nav-link btn btn-link text-dark border-0">Logout</button>
+                </form>
+
+            }
+            else
+            {
+                <a class="nav-link text-dark" id="register" style="color:#514a9d;" asp-area="Identity" asp-page="/Account/Register">Register</a>
+
+
+                <a class="nav-link text-dark" id="login" style="color:#514a9d;" asp-area="Identity" asp-page="/Account/Login">Login</a>
+
+            }
+        </div>
+    </div>
+
+    <div class="cardContainer infoContainer">
+
+        <div>
+            Full Name:
+        </div>
+        <div>
+            @Model.appUser?.Name
+        </div>
+
+        <div>
+            EmployeeId:
+        </div>
+        <div>
+            @Model.appUser?.EmployeeId
+        </div>
+
+        <div>
+            Email:
+        </div>
+        <div>
+            @Model.appUser?.Email
+        </div>
+
+        <div>
+            Department:
+        </div>
+        <div>
+            @Model.appUser?.Department
+        </div>
+
+        <div>
+            Phone No:
+        </div>
+        <div>
+            @Model.appUser?.PhoneNumber
+        </div>
+    </div>
